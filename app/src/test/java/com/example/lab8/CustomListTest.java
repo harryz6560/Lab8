@@ -34,6 +34,7 @@ public class CustomListTest {
     void testCountCities(){
         CustomList list = new CustomList(null, cityList);
         City city = new City("Yellowknife", "Northwest Territories");
+        list.addCity(city);
         assertEquals(1, list.getCount());
     }
 
