@@ -42,10 +42,13 @@ public class CustomListTest {
     void testDeleteCities(){
         CustomList list = new CustomList(null, cityList);
         City city = new City("Yellowknife", "Northwest Territories");
-        cityList.add(city);
+        assertThrows( IllegalArgumentException.class, () -> {
+            list.deleteCity(city); });
+        list.addCity(city);
         // test the delete
-        cityList.delete(city);
-        assertEquals(0, cityList.countCities());
+        list.deleteCity(city);
+        System.out.print(list.getCount());
+        assertEquals(0, list.getCount());
     }
 
 }
