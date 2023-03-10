@@ -70,18 +70,6 @@ public class CustomList extends ArrayAdapter<City> {
     }
 
 
-    /**
-     * This deletes a city to the list if the city exist
-     * @param city
-     * This is a candidate city to delete
-     */
-    public void delete(City city) {
-        if (hasCity(city)) {
-            cities.remove(city);
-            count_size--;
-        } else {
-            throw new IllegalArgumentException("City not found in list");
-        }
-    }
+
 
 }

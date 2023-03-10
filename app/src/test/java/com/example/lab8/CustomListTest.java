@@ -38,5 +38,14 @@ public class CustomListTest {
         assertEquals(1, list.getCount());
     }
 
+    @Test
+    void testDeleteCities(){
+        CustomList list = new CustomList(null, cityList);
+        City city = new City("Yellowknife", "Northwest Territories");
+        cityList.add(city);
+        // test the delete
+        cityList.delete(city);
+        assertEquals(0, cityList.countCities());
+    }
 
 }
