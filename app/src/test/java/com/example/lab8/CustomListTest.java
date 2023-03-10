@@ -27,7 +27,7 @@ public class CustomListTest {
     void testHasCities(){
         CustomList list = new CustomList(null, cityList);
         // see if it is false
-        assertEquals(true, list.hasCity(new City("Yellowknife", "Northwest Territories")));
+        assertEquals(false, list.hasCity(new City("Yellowknife", "Northwest Territories")));
     }
 
 
