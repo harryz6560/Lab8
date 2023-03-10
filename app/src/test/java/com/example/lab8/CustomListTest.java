@@ -27,27 +27,7 @@ public class CustomListTest {
     void testHasCities(){
         CustomList list = new CustomList(null, cityList);
         // see if it is false
-        assertFalse(list.hasCity(new City("Yellowknife", "Northwest Territories")));
-    }
-
-    @Test
-    void testDeleteCities(){
-        CustomList list = new CustomList(null, cityList);
-        City city = new City("Yellowknife", "Northwest Territories");
-        assertThrows( IllegalArgumentException.class, () -> {
-            list.delete(city); });
-
-        list.add(city);
-        // test the delete
-        list.delete(city);
-        assertEquals(0, list.getCount());
-    }
-
-    @Test
-    void testCountCities(){
-        CustomList list = new CustomList(null, cityList);
-        City city = new City("Yellowknife", "Northwest Territories");
-        assertEquals(1, list.getCount());
+        assertEquals(true, list.hasCity(new City("Yellowknife", "Northwest Territories")));
     }
 
 

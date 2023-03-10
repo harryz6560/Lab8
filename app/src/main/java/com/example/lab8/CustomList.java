@@ -16,6 +16,7 @@ public class CustomList extends ArrayAdapter<City> {
 
     private ArrayList<City> cities;
     private Context context;
+    private int count_size = 0;
 
     public CustomList(Context context, ArrayList<City> cities) {
         super(context, 0, cities);
@@ -46,10 +47,11 @@ public class CustomList extends ArrayAdapter<City> {
     }
 
     public int getCount(){
-        return cities.size();
+        return this.count_size;
     }
 
     public void addCity(City city){
+        this.count_size += 1;
         this.cities.add(city);
     }
 
@@ -73,12 +75,12 @@ public class CustomList extends ArrayAdapter<City> {
      * @param city
      * This is a candidate city to delete
      */
-    public void delete(City city){
-        if (hasCity(city)){
+    public void delete(City city) {
+        if (hasCity(city)) {
             cities.remove(city);
-        }
-        else {
-            throw new IllegalArgumentException();
+            count_size--;
+        } else {
+            throw new IllegalArgumentException("City not found in list");
         }
     }
 
